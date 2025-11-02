@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -225,3 +226,232 @@
     <script src="js/account.js"></script>
   </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EC — Account</title>
+    <link rel="stylesheet" href="css/account.css" />
+  </head>
+  <body>
+    <main class="account-wrap" id="accountWrap" aria-live="polite">
+      <!-- Left editorial -->
+      <section class="account-hero" aria-hidden="true">
+        <div class="brand">EC</div>
+        <div class="lead">
+          Premium basics in timeless tones. Sign in to view orders, save
+          favorites, and get early access to new drops. Your essentials —
+          refined.
+        </div>
+
+        <div class="benefits">
+          <div class="benefit">
+            <span class="dot"></span>
+            <div>Fast, secure checkout</div>
+          </div>
+          <div class="benefit">
+            <span class="dot"></span>
+            <div>Save items to wishlist</div>
+          </div>
+          <div class="benefit">
+            <span class="dot"></span>
+            <div>Order tracking & returns</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Panel -->
+      <aside class="account-panel" aria-labelledby="panelTitle">
+        <div class="panel-head">
+          <div class="panel-title" id="panelTitle">Welcome back</div>
+          <div class="toggle-links" role="tablist" aria-label="Authentication">
+            <button
+              id="tab-signin"
+              class="active"
+              role="tab"
+              aria-selected="true"
+            >
+              Sign in
+            </button>
+            <button id="tab-signup" role="tab" aria-selected="false">
+              Create account
+            </button>
+          </div>
+        </div>
+
+        <!-- Sign in form -->
+        <form id="form-signin" novalidate>
+          <div class="field">
+            <label for="si-email">Email</label>
+            <input
+              id="si-email"
+              name="email"
+              type="email"
+              placeholder="you@domain.com"
+              required
+            />
+          </div>
+
+          <div class="field pw-wrap">
+            <label for="si-password">Password</label>
+            <input
+              id="si-password"
+              name="password"
+              type="password"
+              placeholder="••••••••"
+              required
+              minlength="6"
+            />
+            <button
+              type="button"
+              class="pw-toggle"
+              data-target="si-password"
+              aria-label="Show password"
+            >
+              Show
+            </button>
+          </div>
+
+          <div class="actions">
+            <div class="secondary">
+              <label
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 8px;
+                  cursor: pointer;
+                "
+              >
+                <input
+                  id="remember"
+                  type="checkbox"
+                  style="width: 14px; height: 14px; accent-color: #f0e2cc"
+                />
+                <span style="font-size: 0.9rem; color: var(--muted)"
+                  >Remember me</span
+                >
+              </label>
+            </div>
+
+            <div>
+              <a class="muted-link" href="#" id="forgotLink"
+                >Forgot password?</a
+              >
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn">Sign in</button>
+            <button type="button" class="btn ghost" id="guestBtn">
+              Continue as guest
+            </button>
+          </div>
+
+          <div
+            id="si-error"
+            class="form-error"
+            role="status"
+            aria-live="polite"
+            hidden
+          ></div>
+
+          <div class="socials">
+            <button type="button">Continue with Apple</button>
+            <button type="button">Continue with Google</button>
+          </div>
+        </form>
+
+        <!-- Sign up form -->
+        <form id="form-signup" style="display: none" novalidate>
+          <div class="row">
+            <div class="field">
+              <label for="su-first">First name</label>
+              <input
+                id="su-first"
+                name="first"
+                type="text"
+                placeholder="First"
+                required
+              />
+            </div>
+            <div class="field">
+              <label for="su-last">Last name</label>
+              <input
+                id="su-last"
+                name="last"
+                type="text"
+                placeholder="Last"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="su-email">Email</label>
+            <input
+              id="su-email"
+              name="email"
+              type="email"
+              placeholder="you@domain.com"
+              required
+            />
+          </div>
+
+          <div class="field pw-wrap">
+            <label for="su-password">Create password</label>
+            <input
+              id="su-password"
+              name="password"
+              type="password"
+              placeholder="••••••••"
+              required
+              minlength="6"
+            />
+            <button
+              type="button"
+              class="pw-toggle"
+              data-target="su-password"
+              aria-label="Show password"
+            >
+              Show
+            </button>
+          </div>
+
+          <div class="field">
+            <label for="su-news">Subscribe</label>
+            <select id="su-news">
+              <option value="no">No thanks</option>
+              <option value="yes">Yes — share exclusive updates</option>
+            </select>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn">Create account</button>
+            <button type="button" class="btn ghost" id="cancelSignup">
+              Cancel
+            </button>
+          </div>
+
+          <div
+            id="su-error"
+            class="form-error"
+            role="status"
+            aria-live="polite"
+            hidden
+          ></div>
+        </form>
+
+        <p class="terms">
+          By continuing you agree to our
+          <a class="muted-link" href="#">Terms</a> and
+          <a class="muted-link" href="#">Privacy Policy</a>.
+        </p>
+      </aside>
+    </main>
+
+    <script src="js/account.js"></script>
+  </body>
+</html>
+>>>>>>> a9bd756fb86285a6db73f7db229d8367e9039a33
