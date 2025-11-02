@@ -1,0 +1,423 @@
+:root {
+  --bg-color: #001121;
+  --panel: rgba(255, 255, 255, 0.04);
+  --accent: #f0e2cc;
+  --muted: rgba(240, 226, 204, 0.7);
+  --radius: 14px;
+  --glass-blur: 8px;
+  --max-width: 980px;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Times New Roman", Times, serif;
+  background: linear-gradient(180deg, #001121 0%, #001827 60%);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+/* Layout */
+.account-wrap {
+  width: 100%;
+  max-width: var(--max-width);
+  display: grid;
+  grid-template-columns: 1fr 430px;
+  gap: 48px;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.account-wrap.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.account-hero {
+  padding: 48px;
+}
+.brand {
+  font-size: 48px;
+  font-weight: 900;
+  letter-spacing: 6px;
+  margin-bottom: 18px;
+}
+.lead {
+  font-size: 20px;
+  color: var(--muted);
+  margin-bottom: 22px;
+  line-height: 1.5;
+}
+.benefits {
+  display: grid;
+  gap: 12px;
+}
+.benefit {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--muted);
+}
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.account-panel {
+  background: var(--panel);
+  border-radius: var(--radius);
+  padding: 28px;
+  backdrop-filter: blur(var(--glass-blur));
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+}
+
+/* Panel */
+.panel-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+.panel-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+}
+.toggle-links button {
+  background: none;
+  border: 0;
+  color: var(--muted);
+  cursor: pointer;
+  font-family: inherit;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+.toggle-links button.active {
+  background: rgba(240, 226, 204, 0.06);
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* Forms */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+label {
+  font-size: 0.86rem;
+  color: var(--muted);
+}
+input,
+select {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: var(--accent);
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-size: 0.98rem;
+}
+input:focus {
+  border-color: rgba(240, 226, 204, 0.18);
+  box-shadow: 0 0 0 3px rgba(240, 226, 204, 0.05);
+  outline: none;
+}
+input::placeholder {
+  color: rgba(240, 226, 204, 0.35);
+}
+
+.pw-wrap {
+  position: relative;
+}
+.pw-toggle {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: 0;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+/* Buttons */
+.btn {
+  background: var(--accent);
+  color: #001121;
+  border: 0;
+  padding: 12px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+}
+.btn.ghost {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.socials {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
+.socials button {
+  flex: 1;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 10px;
+  cursor: pointer;
+}
+
+.form-error {
+  color: #ffb3b3;
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+.terms {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 14px;
+}
+.muted-link {
+  color: var(--muted);
+  text-decoration: none;
+}
+.muted-link:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 980px) {
+  .account-wrap {
+    grid-template-columns: 1fr;
+    padding: 0 10px;
+  }
+  .account-hero {
+    order: 2;
+    padding: 20px 0;
+    text-align: center;
+  }
+}
+
+/* ------------------- RESPONSIVE POLISHED VERSION ------------------- */
+
+/* ✅ Base tweak for all screens under 1200px */
+@media (max-width: 1200px) {
+  body {
+    padding: 30px 24px;
+  }
+  .account-wrap {
+    gap: 40px;
+  }
+  .brand {
+    font-size: 44px;
+  }
+  .lead {
+    font-size: 18px;
+  }
+}
+
+/* ✅ Tablet layout (≤ 992px) */
+@media (max-width: 992px) {
+  body {
+    padding: 24px 16px;
+  }
+
+  .account-wrap {
+    padding: 0;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    justify-items: center;
+    justify-content: center;
+  }
+
+  .account-hero {
+    display: none;
+  }
+
+  .brand {
+    font-size: 42px;
+    letter-spacing: 5px;
+    margin-bottom: 10px;
+  }
+
+  .lead {
+    font-size: 17px;
+    margin-bottom: 18px;
+  }
+
+  .benefits {
+    gap: 10px;
+  }
+
+  .benefit {
+    justify-content: center;
+    font-size: 0.95rem;
+  }
+
+  .account-panel {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 26px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .socials {
+    flex-direction: column;
+  }
+
+  .socials button {
+    width: 100%;
+  }
+}
+
+/* ✅ Mobile layout (≤ 768px) */
+@media (max-width: 768px) {
+  body {
+    padding: 20px 12px;
+  }
+
+  .account-wrap {
+    gap: 32px;
+  }
+  .account-hero {
+    display: none;
+  }
+
+  .account-panel {
+    max-width: 400px;
+    padding: 22px 20px;
+    border-radius: 12px;
+  }
+
+  .brand {
+    font-size: 34px;
+    letter-spacing: 3px;
+  }
+
+  .lead {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .benefit {
+    font-size: 0.9rem;
+  }
+
+  .panel-title {
+    font-size: 1.05rem;
+  }
+
+  input,
+  select {
+    font-size: 0.95rem;
+    padding: 10px 12px;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .form-actions {
+    gap: 8px;
+  }
+
+  .terms {
+    text-align: center;
+  }
+}
+
+/* ✅ Small phones (≤ 576px) */
+@media (max-width: 576px) {
+  body {
+    padding: 16px;
+  }
+
+  .account-wrap {
+    gap: 28px;
+  }
+
+  .account-panel {
+    padding: 18px;
+    max-width: 95%;
+  }
+
+  .brand {
+    font-size: 28px;
+    margin-bottom: 8px;
+  }
+
+  .lead {
+    font-size: 15px;
+  }
+
+  .benefit {
+    font-size: 0.85rem;
+  }
+
+  label {
+    font-size: 0.8rem;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+  }
+
+  .terms {
+    font-size: 0.8rem;
+    margin-top: 10px;
+  }
+}
+
+/* ✅ Very small devices (≤ 400px) */
+@media (max-width: 400px) {
+  .brand {
+    font-size: 24px;
+  }
+
+  .lead {
+    font-size: 14px;
+  }
+
+  .account-panel {
+    padding: 16px;
+  }
+
+  input,
+  select {
+    font-size: 0.85rem;
+    padding: 8px 10px;
+  }
+
+  .btn {
+    font-size: 0.85rem;
+    padding: 10px;
+  }
+}
