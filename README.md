@@ -47,16 +47,20 @@ EC/
 ├── account.html
 │
 ├── css/
-│ ├── style.css
+| ├── style.css
 │ ├── men.css
 │ ├── women.css
-│ └── account.css
+│ ├── account.css
+| ├── loader.css
+│ └── item.css
 │
 ├── js/
+| ├── script.js
 │ ├── men.js
 │ ├── women.js
-│ ├── item.js
-│ └── lenis.min.js
+│ ├── account.js
+| ├── loader.js
+│ └── item.js
 │
 ├── images/
 │ └── (All product & background images)
