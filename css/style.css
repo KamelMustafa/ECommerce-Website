@@ -513,7 +513,7 @@ body {
   }
 
   .hero-image .hero-text {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 
   .hero-image .h-img {
@@ -547,8 +547,8 @@ body {
   }
 
   .footer-container {
-    grid-template-columns: repeat(2, 1fr);
-    text-align: justify;
+    grid-template-columns: repeat(1, 1fr);
+    text-align: center;
   }
 
   .newsletter-form {
