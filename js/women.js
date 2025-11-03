@@ -67,3 +67,19 @@ sliders.forEach((slider) => {
 lenis.on("scroll", (e) => {
   console.log(e);
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.body.classList.add("loaded");
+});
+
+// Smooth transition when clicking links
+document.querySelectorAll("a[href]").forEach((link) => {
+  if (!link.href.includes("#") && !link.target) {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const url = link.href;
+      document.body.classList.remove("loaded");
+      setTimeout(() => (window.location = url), 500);
+    });
+  }
+});

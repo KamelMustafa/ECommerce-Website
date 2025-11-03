@@ -150,3 +150,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+// === Page Fade Transition ===
+document.addEventListener("DOMContentLoaded", () => {
+  // Fade in on load
+  document.body.classList.add("loaded");
+
+  // Fade out on link click
+  document.querySelectorAll("a[href]").forEach((link) => {
+    if (!link.href.includes("#") && !link.target) {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        const url = link.href;
+        document.body.classList.remove("loaded");
+        setTimeout(() => (window.location = url), 500);
+      });
+    }
+  });
+});

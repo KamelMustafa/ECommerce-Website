@@ -1,5 +1,3 @@
-// js/item.js
-
 document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
   const itemId = params.get("id");
@@ -21,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       id: 11,
-      title: "The Journey Hoodi",
+      title: "The Journey Hoodie",
       desc: "Natural fabric • Heavy",
       price: "$75",
       img: "images/25db8763-ed06-486c-b207-dea6a8879916.jpeg",
@@ -35,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       id: 13,
-      title: "High Wiest",
+      title: "High Waist",
       desc: "Heavy cotton • Clean minimal design",
       price: "$60",
       img: "images/ae2f2e55-0d62-44b9-9af6-5c7d79442c57.jpeg",
@@ -77,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       id: 19,
-      title: "Too many Thoughts Hoodie",
+      title: "Too Many Thoughts Hoodie",
       desc: "French terry • Elevated everyday layer",
       price: "$95",
       img: "images/e15c4de3-b86d-4b9e-8e48-4a6bc311cb08.jpeg",
@@ -97,79 +95,72 @@ document.addEventListener("DOMContentLoaded", () => {
       img: "images/Męski luźny kardigan w jednolitym kolorze, z….jpeg",
     },
 
-    // ===== MEN ITEMS =====
+    // ===== MEN ITEMS (40–48) =====
     {
-      id: 30,
-      title: "Minimal Black Tee",
-      desc: "Refined cotton tee with clean lines.",
-      price: "$45",
-      img: "images/ae2f2e55-0d62-44b9-9af6-5c7d79442c57.jpeg",
-    },
-    {
-      id: 31,
-      title: "Brown Suede Jacket",
-      desc: "Warm and stylish with faux fur lining.",
-      price: "$120",
-      img: "images/Men's Solid Brown Suede Faux Fur Jacket, Autumn….jpeg",
-    },
-    {
-      id: 32,
+      id: 40,
       title: "Beige Linen Shirt",
       desc: "Lightweight linen for effortless style.",
-      price: "$65",
+      price: "$75",
       img: "images/1288f43b-d980-4644-a86b-48549ea91deb.jpeg",
     },
     {
-      id: 33,
+      id: 41,
+      title: "Textured Polo",
+      desc: "Soft texture and subtle elegance.",
+      price: "$65",
+      img: "images/25db8763-ed06-486c-b207-dea6a8879916.jpeg",
+    },
+    {
+      id: 42,
+      title: "Off-White Overshirt",
+      desc: "Subtle texture and modern cut.",
+      price: "$90",
+      img: "images/72295304-c6b6-4d86-843d-0cf39fa3314b.jpeg",
+    },
+    {
+      id: 43,
+      title: "Minimal Black Tee",
+      desc: "Refined cotton tee with clean lines.",
+      price: "$50",
+      img: "images/ae2f2e55-0d62-44b9-9af6-5c7d79442c57.jpeg",
+    },
+    {
+      id: 44,
       title: "Stone Knit Polo",
       desc: "Casual comfort meets refined detail.",
-      price: "$70",
+      price: "$85",
       img: "images/Instagram.jpeg",
     },
     {
-      id: 34,
+      id: 45,
+      title: "Cream Button-Down",
+      desc: "Versatile everyday shirt.",
+      price: "$80",
+      img: "images/Lookbook_Visionaries – eightyfiveclo _ Graphic shirt design, Cool shirt designs, S___.jpeg",
+    },
+    {
+      id: 46,
       title: "Neutral Oversized Hoodie",
       desc: "Relaxed fit with cozy fleece interior.",
       price: "$90",
       img: "images/e15c4de3-b86d-4b9e-8e48-4a6bc311cb08.jpeg",
     },
     {
-      id: 35,
-      title: "Charcoal Polo",
-      desc: "Soft touch with elegant structure.",
-      price: "$65",
-      img: "images/masaaki-komori-9ugEeqflo70-unsplash.jpg",
+      id: 47,
+      title: "White Polo",
+      desc: "Soft cotton comfort with clean structure.",
+      price: "$90",
+      img: "images/7a1eaab9-bdf8-46a5-9f1f-a9209a25bc80.jpeg",
     },
     {
-      id: 36,
-      title: "Cream Button-Down",
-      desc: "Versatile everyday shirt.",
-      price: "$60",
-      img: "images/Lookbook_Visionaries – eightyfiveclo _ Graphic shirt design, Cool shirt designs, S___.jpeg",
-    },
-    {
-      id: 37,
-      title: "Off-White Overshirt",
-      desc: "Subtle texture and modern cut.",
-      price: "$75",
-      img: "images/72295304-c6b6-4d86-843d-0cf39fa3314b.jpeg",
-    },
-    {
-      id: 38,
-      title: "Sand Textured Hoodie",
-      desc: "Relaxed fit with soft cotton feel.",
-      price: "$85",
-      img: "images/Hoodies & Sweatshirts by ASOS DESIGN Act casual….jpeg",
-    },
-    {
-      id: 39,
-      title: "Textured Polo",
-      desc: "Premium knit for a clean finish.",
-      price: "$70",
-      img: "images/25db8763-ed06-486c-b207-dea6a8879916.jpeg",
+      id: 48,
+      title: "Stone Knit Cardigan",
+      desc: "Soft rib knit • Refined drape.",
+      price: "$90",
+      img: "images/Męski luźny kardigan w jednolitym kolorze, z….jpeg",
     },
 
-    // ===== WOMEN ITEMS =====
+    // ===== WOMEN ITEMS (50–59) =====
     {
       id: 50,
       title: "Beige Linen Blouse",
@@ -259,23 +250,16 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// scroll animation
-// Initialize Lenis
-const lenis = new Lenis({
-  autoRaf: true,
-});
+// ===== Smooth fade transition (same as account.html) =====
+document.body.classList.add("loaded");
 
-// Prevent Lenis from handling horizontal sliders
-const sliders = document.querySelectorAll(".slider");
-sliders.forEach((slider) => {
-  slider.addEventListener("wheel", (e) => {
-    if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
-      e.stopPropagation(); // stops Lenis from touching it
-    }
-  });
-});
-
-// Listen for the scroll event and log the event data
-lenis.on("scroll", (e) => {
-  console.log(e);
+document.querySelectorAll("a").forEach((link) => {
+  if (link.href && !link.href.includes("#")) {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const url = link.href;
+      document.body.classList.remove("loaded");
+      setTimeout(() => (window.location = url), 500);
+    });
+  }
 });
