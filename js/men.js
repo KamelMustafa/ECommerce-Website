@@ -79,18 +79,29 @@ lenis.on("scroll", (e) => {
   console.log(e);
 });
 
-document.addEventListener("DOMContentLoaded", () => {
+// Ensure page becomes visible again when loaded or returned to
+function showPage() {
   document.body.classList.add("loaded");
+}
+
+// When first loaded
+document.addEventListener("DOMContentLoaded", showPage);
+
+// When user navigates back (from cache)
+window.addEventListener("pageshow", (event) => {
+  if (event.persisted) {
+    showPage();
+  }
 });
 
-// Smooth transition when clicking links
+// Smooth fade transition on link clicks
 document.querySelectorAll("a[href]").forEach((link) => {
   if (!link.href.includes("#") && !link.target) {
     link.addEventListener("click", (e) => {
       e.preventDefault();
       const url = link.href;
       document.body.classList.remove("loaded");
-      setTimeout(() => (window.location = url), 500);
+      setTimeout(() => (window.location = url), 300);
     });
   }
 });
