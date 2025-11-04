@@ -194,6 +194,18 @@ body.loaded {
 
 /* ===== Responsive ===== */
 @media (max-width: 992px) {
+  .header-content {
+    padding: 0 2rem;
+  }
+
+  .header-content .middle-part {
+    gap: 1rem;
+  }
+
+  .header-content .middle-part a {
+    padding: 0 1.2rem;
+    font-size: 0.95rem;
+  }
   .men-hero h1 {
     font-size: 3rem;
   }
@@ -220,11 +232,7 @@ body.loaded {
     display: block;
   }
 
-  .middle-part {
-    gap: 1.5rem;
-  }
-
-  .men-hero h1 {
+  .women-hero h1 {
     font-size: 2.5rem;
   }
 
