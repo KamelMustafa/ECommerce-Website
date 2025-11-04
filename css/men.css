@@ -205,7 +205,19 @@ body.loaded {
 @media (max-width: 768px) {
   .header-content {
     flex-direction: column;
+    align-items: flex-start;
     gap: 1rem;
+  }
+
+  .header-content .middle-part {
+    flex-direction: row;
+    align-items: center;
+    /* width: 100%; */
+  }
+
+  .header-content .middle-part a {
+    padding: 0.6rem 0;
+    display: block;
   }
 
   .middle-part {
@@ -221,7 +233,35 @@ body.loaded {
   }
 }
 
+/* Phones */
+@media (max-width: 576px) {
+  body {
+    font-size: 0.9rem;
+  }
+
+  .header-content .logo {
+    font-size: 1.4rem;
+  }
+
+  .right-part {
+    font-size: 0.9rem;
+  }
+}
+
 @media (max-width: 480px) {
+  .header-content .middle-part a,
+  .header-content .right-part {
+    font-size: 0.8rem;
+  }
+  .header-content .middle-part {
+    width: 45%;
+  }
+  .header-content .middle-part a {
+    padding: 0 0.3rem;
+  }
+  .header-content .logo {
+    font-size: 1rem;
+  }
   .men-hero h1 {
     font-size: 1.8rem;
   }
