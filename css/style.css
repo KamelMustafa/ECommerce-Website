@@ -531,6 +531,10 @@ body {
   .right-part {
     font-size: 0.9rem;
   }
+  .header-content .middle-part .nav-trigger {
+    display: flex;
+    justify-content: center;
+  }
 
   .hero-image .hero-text {
     font-size: 1.5rem;
@@ -602,6 +606,10 @@ body {
   .hero-image .hero-text {
     font-size: 1.1rem;
   }
+  .header-content .middle-part .nav-trigger {
+    display: flex;
+    justify-content: center;
+  }
 
   .slider .slide {
     width: 270px;
@@ -629,6 +637,10 @@ body {
   }
   .hero-image .hero-text {
     font-size: 0.9rem;
+  }
+  .header-content .middle-part .nav-trigger {
+    display: flex;
+    justify-content: center;
   }
 
   .slider .slide {
