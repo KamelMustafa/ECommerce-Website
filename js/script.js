@@ -168,3 +168,26 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+// Dropdown click
+document.querySelectorAll(".dropdown-toggle").forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    e.stopPropagation(); // prevent closing
+    const navItem = btn.closest(".nav-item");
+
+    // close others
+    document.querySelectorAll(".nav-item.active").forEach((item) => {
+      if (item !== navItem) item.classList.remove("active");
+    });
+
+    // toggle this one
+    navItem.classList.toggle("active");
+  });
+});
+
+// close when clicking outside
+document.addEventListener("click", () => {
+  document
+    .querySelectorAll(".nav-item.active")
+    .forEach((item) => item.classList.remove("active"));
+});
