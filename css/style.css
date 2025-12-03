@@ -478,6 +478,10 @@ body {
     align-items: center;
     /* width: 100%; */
   }
+  .header-content .middle-part .nav-trigger {
+    display: flex;
+    justify-content: center;
+  }
 
   .header-content .middle-part a {
     padding: 0.6rem 0;
