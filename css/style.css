@@ -482,6 +482,7 @@ body {
     display: flex;
     justify-content: center;
     text-align: center;
+    align-items: center;
   }
 
   .header-content .middle-part a {
@@ -532,7 +533,7 @@ body {
   .right-part {
     font-size: 0.9rem;
   }
-  .header-content .middle-part .nav-trigger {
+  .header-content .middle-part {
     display: flex;
     justify-content: center;
     text-align: center;
@@ -608,7 +609,7 @@ body {
   .hero-image .hero-text {
     font-size: 1.1rem;
   }
-  .header-content .middle-part .nav-trigger {
+  .header-content .middle-part {
     display: flex;
     justify-content: center;
     text-align: center;
@@ -641,7 +642,7 @@ body {
   .hero-image .hero-text {
     font-size: 0.9rem;
   }
-  .header-content .middle-part .nav-trigger {
+  .header-content .middle-part {
     display: flex;
     justify-content: center;
     text-align: center;
