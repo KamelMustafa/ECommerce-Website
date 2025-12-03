@@ -481,6 +481,7 @@ body {
   .header-content .middle-part .nav-trigger {
     display: flex;
     justify-content: center;
+    text-align: center;
   }
 
   .header-content .middle-part a {
@@ -534,6 +535,7 @@ body {
   .header-content .middle-part .nav-trigger {
     display: flex;
     justify-content: center;
+    text-align: center;
   }
 
   .hero-image .hero-text {
@@ -609,6 +611,7 @@ body {
   .header-content .middle-part .nav-trigger {
     display: flex;
     justify-content: center;
+    text-align: center;
   }
 
   .slider .slide {
@@ -641,6 +644,7 @@ body {
   .header-content .middle-part .nav-trigger {
     display: flex;
     justify-content: center;
+    text-align: center;
   }
 
   .slider .slide {
