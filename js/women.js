@@ -1,4 +1,4 @@
-// women.js
+// men.js
 
 document.addEventListener("DOMContentLoaded", () => {
   const buttons = document.querySelectorAll(".filter-btn");
@@ -48,49 +48,49 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     applyFilter("all");
   }
-});
 
-// Scroll animation
-const lenis = new Lenis({
-  autoRaf: true,
-});
+  // ----------------------
+  // Header Dropdowns
+  // ----------------------
+  const navItems = document.querySelectorAll(".nav-item");
+  navItems.forEach((item) => {
+    const trigger = item.querySelector(".nav-trigger");
+    trigger.addEventListener("mouseenter", () => item.classList.add("active"));
+    trigger.addEventListener("mouseleave", () =>
+      item.classList.remove("active")
+    );
+  });
 
-const sliders = document.querySelectorAll(".slider");
-sliders.forEach((slider) => {
-  slider.addEventListener("wheel", (e) => {
-    if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
-      e.stopPropagation();
+  // ----------------------
+  // Mobile Menu Toggle
+  // ----------------------
+  const menuBtn = document.getElementById("menuBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("show");
+  });
+
+  // ----------------------
+  // Page Fade-In / Fade-Out
+  // ----------------------
+  function showPage() {
+    document.body.classList.add("loaded");
+  }
+
+  showPage();
+
+  window.addEventListener("pageshow", (event) => {
+    if (event.persisted) showPage();
+  });
+
+  document.querySelectorAll("a[href]").forEach((link) => {
+    if (!link.href.includes("#") && !link.target) {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        const url = link.href;
+        document.body.classList.remove("loaded");
+        setTimeout(() => (window.location = url), 300);
+      });
     }
   });
-});
-
-lenis.on("scroll", (e) => {
-  console.log(e);
-});
-
-// Ensure page becomes visible again when loaded or returned to
-function showPage() {
-  document.body.classList.add("loaded");
-}
-
-// When first loaded
-document.addEventListener("DOMContentLoaded", showPage);
-
-// When user navigates back (from cache)
-window.addEventListener("pageshow", (event) => {
-  if (event.persisted) {
-    showPage();
-  }
-});
-
-// Smooth fade transition on link clicks
-document.querySelectorAll("a[href]").forEach((link) => {
-  if (!link.href.includes("#") && !link.target) {
-    link.addEventListener("click", (e) => {
-      e.preventDefault();
-      const url = link.href;
-      document.body.classList.remove("loaded");
-      setTimeout(() => (window.location = url), 300);
-    });
-  }
 });
