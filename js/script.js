@@ -191,3 +191,11 @@ document.addEventListener("click", () => {
     .querySelectorAll(".nav-item.active")
     .forEach((item) => item.classList.remove("active"));
 });
+
+// menu button
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+
+menuBtn.addEventListener("click", () => {
+  mobileMenu.classList.toggle("show");
+});

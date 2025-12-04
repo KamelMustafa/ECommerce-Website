@@ -76,21 +76,22 @@ body {
   padding: 0.5rem 0;
 }
 .header-content .middle-part .men,
-.header-content .middle-part .women {
+.header-content .middle-part .women,
+.header-content .middle-part .kids {
   padding: 0;
 }
 
-/* .nav-trigger a:hover {
+.dropdown-toggle:hover {
   opacity: 0.7;
-} */
+}
 
 .dropdown {
   position: absolute;
-  top: 110%;
-  background-color: rgba(0, 26, 51, 0.95);
+  top: 140%;
+  background-color: rgba(0, 26, 51, 0.777);
   backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 1rem 2rem;
   display: flex;
   flex-direction: column;
@@ -416,12 +417,62 @@ body {
   padding-top: 1.5rem;
 }
 
+/* Mobile Menu Button */
+/* Menu Button */
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* FULL SCREEN SLIDE-UP MENU */
+.mobile-menu {
+  position: fixed;
+  bottom: -100%; /* hidden below the screen */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 20, 40, 0.97);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+  transition: bottom 0.5s ease; /* smooth slide */
+  z-index: 1000;
+}
+
+.mobile-menu a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+/* When menu is open */
+.mobile-menu.show {
+  bottom: 0; /* slide up to full screen */
+}
+
 /* ------------------- RESPONSIVE DESIGN ------------------- */
 
 /* General scaling for smaller devices */
 @media (max-width: 1200px) {
+  .header-content .middle-part {
+    gap: 2rem;
+  }
+
   .header-content .middle-part a {
     padding: 0 2rem;
+  }
+  .nav-trigger {
+    display: flex;
+    flex-direction: row;
   }
 
   .hero-image .hero-text {
@@ -440,7 +491,7 @@ body {
   }
 
   .header-content .middle-part {
-    gap: 1rem;
+    gap: 2rem;
   }
 
   .header-content .middle-part a {
@@ -467,27 +518,18 @@ body {
 
 /* Tablets & large phones (landscape) */
 @media (max-width: 768px) {
-  .header-content {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-
-  .header-content .middle-part {
-    flex-direction: row;
-    align-items: center;
-    /* width: 100%; */
-  }
-  .header-content .middle-part .nav-trigger {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-  }
-
-  .header-content .middle-part a {
-    padding: 0.6rem 0;
+  .menu-btn {
     display: block;
+  }
+
+  .header-content .middle-part,
+  .header-content .right-part {
+    display: none; /* hide normal navbar */
+  }
+
+  /* show mobile menu when active */
+  .mobile-menu.show {
+    display: flex;
   }
 
   .hero-image .hero-text {
@@ -530,13 +572,19 @@ body {
     font-size: 1.4rem;
   }
 
-  .right-part {
-    font-size: 0.9rem;
+  .menu-btn {
+    display: block;
+    font-size: 1.7rem;
   }
-  .header-content .middle-part {
+
+  .header-content .middle-part,
+  .header-content .right-part {
+    display: none; /* hide normal navbar */
+  }
+
+  /* show mobile menu when active */
+  .mobile-menu.show {
     display: flex;
-    justify-content: center;
-    text-align: center;
   }
 
   .hero-image .hero-text {
@@ -593,26 +641,21 @@ body {
 
 /* Very small phones */
 @media (max-width: 400px) {
-  .header-content .middle-part a,
-  .header-content .right-part {
-    font-size: 0.8rem;
-  }
-  .header-content .middle-part {
-    width: 45%;
-  }
-  .header-content .middle-part a {
-    padding: 0 0.3rem;
-  }
-  .header-content .logo {
-    font-size: 1rem;
-  }
   .hero-image .hero-text {
     font-size: 1.1rem;
   }
-  .header-content .middle-part {
+  .menu-btn {
+    display: block;
+  }
+
+  .header-content .middle-part,
+  .header-content .right-part {
+    display: none; /* hide normal navbar */
+  }
+
+  /* show mobile menu when active */
+  .mobile-menu.show {
     display: flex;
-    justify-content: center;
-    text-align: center;
   }
 
   .slider .slide {
@@ -626,26 +669,21 @@ body {
 
 /* Very small phones */
 @media (max-width: 320px) {
-  .header-content .middle-part a,
-  .header-content .right-part {
-    font-size: 0.8rem;
-  }
-  .header-content .middle-part {
-    width: 45%;
-  }
-  .header-content .middle-part a {
-    padding: 0 0.3rem;
-  }
-  .header-content .logo {
-    font-size: 1rem;
-  }
   .hero-image .hero-text {
     font-size: 0.9rem;
   }
-  .header-content .middle-part {
+  .menu-btn {
+    display: block;
+  }
+
+  .header-content .middle-part,
+  .header-content .right-part {
+    display: none; /* hide normal navbar */
+  }
+
+  /* show mobile menu when active */
+  .mobile-menu.show {
     display: flex;
-    justify-content: center;
-    text-align: center;
   }
 
   .slider .slide {
