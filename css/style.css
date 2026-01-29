@@ -50,10 +50,7 @@ body {
 /* Middle Part */
 .header-content .middle-part {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  width: 25%;
+  gap: 2rem;
 }
 .header-content .middle-part a {
   padding: 0 2rem;
@@ -219,7 +216,9 @@ body {
   scroll-snap-align: start;
   background: #00203d;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
   cursor: pointer;
 }
 
@@ -255,7 +254,9 @@ body {
 /* Page transition base */
 #mainContent,
 #categoryPage {
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
 }
 
 /* Hidden page state */
@@ -298,7 +299,9 @@ body {
   border-radius: 18px;
   overflow: hidden;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   cursor: pointer;
 }
 

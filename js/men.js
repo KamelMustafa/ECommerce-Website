@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     buttons.forEach((btn) => {
       const btnFilter = normalize(
-        btn.getAttribute("data-filter") || btn.textContent
+        btn.getAttribute("data-filter") || btn.textContent,
       );
       btn.classList.toggle("active", btnFilter === normalizedFilter);
     });
@@ -52,15 +52,29 @@ document.addEventListener("DOMContentLoaded", () => {
   // ----------------------
   // Header Dropdowns
   // ----------------------
-  const navItems = document.querySelectorAll(".nav-item");
-  navItems.forEach((item) => {
-    const trigger = item.querySelector(".nav-trigger");
-    trigger.addEventListener("mouseenter", () => item.classList.add("active"));
-    trigger.addEventListener("mouseleave", () =>
-      item.classList.remove("active")
-    );
+
+  // Dropdown click
+  document.querySelectorAll(".dropdown-toggle").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation(); // prevent closing
+      const navItem = btn.closest(".nav-item");
+
+      // close others
+      document.querySelectorAll(".nav-item.active").forEach((item) => {
+        if (item !== navItem) item.classList.remove("active");
+      });
+
+      // toggle this one
+      navItem.classList.toggle("active");
+    });
   });
 
+  // close when clicking outside
+  document.addEventListener("click", () => {
+    document
+      .querySelectorAll(".nav-item.active")
+      .forEach((item) => item.classList.remove("active"));
+  });
   // ----------------------
   // Mobile Menu Toggle
   // ----------------------
